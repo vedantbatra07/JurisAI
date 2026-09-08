@@ -1,24 +1,19 @@
 # JurisAI
 
-JurisAI is a dark-mode legal information assistant that helps people understand laws, rights, and procedures in plain language. It's built with Next.js and powered by the Gemini API with Google Search grounding, so answers come with real, cited sources instead of guesses.
+JurisAI is a dark-mode chat assistant for legal questions. Set your jurisdiction, ask something in plain English, and it answers using Gemini with Google Search grounding turned on, so it cites real sources instead of just making things up.
 
-## What it does
+You can attach a PDF, an image, or a text file if you want to ask about a specific document — a notice, a contract, whatever. No account or login, chats just live in the browser tab you're using and disappear when you close it.
 
-- **Jurisdiction-aware answers.** Pick a city, state, or country — from major Indian cities to the US, UK, Canada, and Australia — and JurisAI tailors its answers to the laws and procedures that actually apply there.
-- **Grounded, sourced responses.** Every answer is backed by live Google Search grounding through Gemini, with clickable source links appended so you can verify anything important yourself rather than take the AI's word for it.
-- **Document and image understanding.** Attach a PDF, text file, or image (contracts, notices, screenshots, etc.) and ask questions about it directly in the chat.
-- **Multiple chats, kept simple.** Start new conversations, switch between them, and pick up where you left off — all without an account, since chat history lives only in the current browser tab and clears when the session ends.
-- **Privacy-first by design.** Nothing is sent to a server-side database. There's a visible reminder never to share passwords, OTPs, or ID numbers in a chat, and an optional access password can be set to keep a deployment private.
-- **Clean, readable formatting.** Responses render with proper headings, numbered steps, and bullet points instead of a wall of text, so legal explanations are actually easy to follow.
+It covers most major Indian cities plus the US, UK, Canada, and Australia as jurisdiction options, since the right answer to a lot of legal questions depends heavily on where you actually are.
 
-## Tech stack
+There's an optional password you can set if you're deploying this somewhere and don't want it fully public.
 
-Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui · Gemini API (with Google Search grounding)
+Built with Next.js, TypeScript, Tailwind, and shadcn/ui.
 
-## Getting started
+## Setup / deployment
 
-Setup, environment variables, and deployment instructions live in [`SHARE_AND_DEPLOY.md`](./SHARE_AND_DEPLOY.md).
+See [`SHARE_AND_DEPLOY.md`](./SHARE_AND_DEPLOY.md) for that.
 
 ## Disclaimer
 
-JurisAI provides general legal information, not legal advice. For anything with real stakes, consult a licensed lawyer in your jurisdiction.
+This gives general legal information, not legal advice. Talk to an actual lawyer for anything that matters.
