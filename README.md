@@ -12,7 +12,7 @@ Built with Next.js, TypeScript, Tailwind, and shadcn/ui.
 
 ## Setup / deployment
 
-See [`SHARE_AND_DEPLOY.md`](./SHARE_AND_DEPLOY.md) for that.
+See [`DEPLOY.md`](./DEPLOY.md) for that.
 
 ## Disclaimer
 
