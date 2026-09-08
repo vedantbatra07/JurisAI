@@ -1,81 +1,24 @@
 # JurisAI
 
-JurisAI is a dark-mode legal information assistant built with Next.js and the Gemini API.
+JurisAI is a dark-mode legal information assistant that helps people understand laws, rights, and procedures in plain language. It's built with Next.js and powered by the Gemini API with Google Search grounding, so answers come with real, cited sources instead of guesses.
 
-## Run locally
+## What it does
 
-1. Install Node.js 22.
-2. Install dependencies:
+- **Jurisdiction-aware answers.** Pick a city, state, or country — from major Indian cities to the US, UK, Canada, and Australia — and JurisAI tailors its answers to the laws and procedures that actually apply there.
+- **Grounded, sourced responses.** Every answer is backed by live Google Search grounding through Gemini, with clickable source links appended so you can verify anything important yourself rather than take the AI's word for it.
+- **Document and image understanding.** Attach a PDF, text file, or image (contracts, notices, screenshots, etc.) and ask questions about it directly in the chat.
+- **Multiple chats, kept simple.** Start new conversations, switch between them, and pick up where you left off — all without an account, since chat history lives only in the current browser tab and clears when the session ends.
+- **Privacy-first by design.** Nothing is sent to a server-side database. There's a visible reminder never to share passwords, OTPs, or ID numbers in a chat, and an optional access password can be set to keep a deployment private.
+- **Clean, readable formatting.** Responses render with proper headings, numbered steps, and bullet points instead of a wall of text, so legal explanations are actually easy to follow.
 
-   ```bash
-   npm install
-   ```
+## Tech stack
 
-3. Copy `.env.example` to `.env.local`, add a fresh Gemini authorization key, and set an access password for private/demo deployments:
+Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui · Gemini API (with Google Search grounding)
 
-   ```env
-   GEMINI_API_KEY=your_own_gemini_key_here
-   JURISAI_ACCESS_PASSWORD=use_your_own_long_random_password
-   ```
+## Getting started
 
-4. Start the app:
+Setup, environment variables, and deployment instructions live in [`SHARE_AND_DEPLOY.md`](./SHARE_AND_DEPLOY.md).
 
-   ```bash
-   npm run dev
-   ```
+## Disclaimer
 
-Open `http://localhost:3000`.
-
-## Create the GitHub repository
-
-Run these commands from this project folder:
-
-```bash
-git init
-git add .
-git commit -m "Initial JurisAI release"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/jurisai.git
-git push -u origin main
-```
-
-Create the empty `jurisai` repository on GitHub before running the last two commands. Do not add a GitHub README, license, or `.gitignore` when creating it because this project already contains those files.
-
-If you use GitHub CLI instead:
-
-```bash
-git init
-git add .
-git commit -m "Initial JurisAI release"
-gh repo create jurisai --private --source=. --remote=origin --push
-```
-
-## Deploy on Vercel
-
-1. Import the GitHub repository at `https://vercel.com/new`.
-2. Keep the detected framework as Next.js.
-3. Create your own Gemini API key in Google AI Studio. Never reuse or share another person's key.
-4. Add your own `GEMINI_API_KEY` under Project Settings → Environment Variables as a Secret.
-5. Apply it to Production and Preview.
-6. Deploy. Redeploy after adding or changing the secret.
-
-The backend is the Next.js route handler at `app/api/chat/route.ts`; Vercel deploys it as a Function automatically. The API key is read only on the server and must never use a `NEXT_PUBLIC_` prefix.
-
-## Important limits
-
-- Attachments are limited to 3 MB total to stay below Vercel Function request limits after base64 encoding.
-- Chat history is stored in session storage and is removed when the browser tab/session closes.
-- The API applies a per-instance request limit. For high-traffic public deployments, also enable a distributed platform/WAF rate limit.
-- Set `JURISAI_ACCESS_PASSWORD` for private/demo deployments. If omitted, the site remains public.
-- Legal responses use Gemini Google Search grounding and append available source links; users should still verify consequential information.
-
-
-## Quality checks
-
-Run the full validation suite before deployment:
-
-```bash
-npm run check
-```
-
-This runs ESLint, the Node security tests, and a production Next.js build.
+JurisAI provides general legal information, not legal advice. For anything with real stakes, consult a licensed lawyer in your jurisdiction.
